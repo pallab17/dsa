@@ -1,1 +1,21 @@
 
+class Solution {
+public:
+    bool isValid(string s) {
+      stack<char>sta;    // creating a stack 
+      for(auto it:s){     // iterating through the string 
+          if(it=='(' || it=='{' || it == '[') //  jodi opening brackets gulo = pointer ta hoye tahole push kore debo stack e
+
+          sta.push(it);  // push korchi
+
+          else{    // jodi closing bracket hoye then ei else statement e dhukbo
+             if(sta.size() == 0) return false; // edge case--- jodi string  faka hoye return korbo zero
+             char ch = sta.top();   // stack r top mal ta ke ch r modhe rakhbo
+              sta.pop();  //  stack r top mal take pop korbo
+              if((it == ')' and ch == '(') or  (it == ']' and ch == '[') or (it == '}' and ch == '{')) continue;     // jodi opening and closing bracket hoye then iterator r pointer take egiye debo
+                 else return false;    // jodi na mele return korbo false
+          }
+      }  
+       return sta.empty();   // jodi no of opening and closing brackets same hoye then empty stack ferot korbo
+    }
+};
