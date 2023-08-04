@@ -1,2 +1,2 @@
-# dsa stack queue
+# dsa-stack-queue
 sde striver sheet
